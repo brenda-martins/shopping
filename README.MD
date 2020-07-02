@@ -17,7 +17,7 @@ This project is part of my personal portfolio. My intention is to improve my pro
 ![](https://github.com/brenda-martins/shopping/blob/master/images-project/login.png)
 ![](https://github.com/brenda-martins/shopping/blob/master/images-project/search.png)
 ![](https://github.com/brenda-martins/shopping/blob/master/images-project/cart.png)
-[](https://github.com/brenda-martins/shopping/blob/master/images-project/area-administrativa.png)
+![](https://github.com/brenda-martins/shopping/blob/master/images-project/area-administrativa.png)
 
 # Functionalities
 
@@ -26,6 +26,7 @@ This project is part of my personal portfolio. My intention is to improve my pro
 3. CRUD Products and Category
 4. Add to cart
 5. Search products
+6. Layout responsive
 
 # Some technical information
 
