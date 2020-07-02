@@ -14,10 +14,11 @@ This project is part of my personal portfolio. My intention is to improve my pro
 # Some technical information
 
 1. Cloning the Repository
-,,,
+
+```
 $ git clone  https://github.com/brenda-martins/shopping.git
 $ cd shopping
-,,,
+```
 
 2. Run the composer
 
