@@ -2,7 +2,20 @@
 
 Simple online store that I used to apply some of my knowledge
 
-PS Online store was the simplest context I found, but the code used here can be used on any system (such as structured login or a simple crud)
+### PS: 
+Online store was the simplest context I found, but the code used here can be used in any system or even used to complement the idea.
+Example: 
+
+1. Checkout the purchase using the pagarme API
+
+```
+$ composer require pagarme/pagarme-php
+```
+Here's the documentation : https://docs.pagar.me/reference#principios-basicos
+
+2. Implementation of logs to monitor application behavior .
+
+AND MORE ...
 
 
 
@@ -28,7 +41,7 @@ This project is part of my personal portfolio. My intention is to improve my pro
 5. Search products
 6. Layout responsive
 
-# Some technical information
+# Some technical information#
 
 1. Cloning the Repository
 
