@@ -1,0 +1,122 @@
+html {
+    font-size: 50%;
+}
+
+@media (max-width: 1103px) {
+    .product-information .cart {
+        margin-top: 10px;
+        /* background-color: red; */
+    }
+}
+@media (max-width: 753px) {
+    #single-product {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 700px) {
+    .menu-section nav,
+    .menu-section form {
+        display: none;
+    }
+
+    .one,
+    .two,
+    .three {
+        background-color: #fff;
+        height: 5px;
+        width: 100%;
+        margin: 6px auto;
+
+        transition-duration: 0.3s;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 30px;
+        margin-right: 20px;
+    }
+
+    .menu-section.on {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-section.on nav {
+        display: block;
+    }
+
+    .menu-section.on form {
+        display: flex;
+    }
+
+    .menu-section.on .menu-toggle {
+        position: absolute;
+        right: 40px;
+        top: 60px;
+    }
+
+    .menu-section.on .menu-toggle .one {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .menu-section.on .menu-toggle .two {
+        opacity: 0;
+    }
+
+    .menu-section.on .menu-toggle .three {
+        transform: rotate(-45deg) translate(8px, -9px);
+    }
+
+    .menu-section.on nav ul {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-section.on nav ul a {
+        transition-duration: 0.5s;
+        font-size: 3rem;
+        line-height: 4rem;
+        display: block;
+    }
+
+    .menu-section.on form input {
+        padding: 1.7rem 2.5rem;
+    }
+
+    .menu-section.on form button {
+        padding: 1.7rem 2rem;
+    }
+}
+
+@media (max-width: 630px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 525px) {
+    main .container-- {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 522px) {
+    #single-product .product-details {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
