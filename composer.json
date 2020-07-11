@@ -26,7 +26,7 @@
       "coffeecode/uploader": "^1.0",
       "ext-gd": "*",
       "matthiasmullie/minify": "1.3.61",
-      "phpmailer/phpmailer": "^6.1"
+      "phpmailer/phpmailer": "^6.1",
+        "pagarme/pagarme-php": "^4.1"
     }
   }
-  

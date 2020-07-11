@@ -5,6 +5,7 @@ namespace Source\Controllers;
 use Source\Controllers\Controller;
 use Source\Models\Product;
 use Source\Facades\Cart;
+use Source\Models\User;
 
 /**
  * Description of WebCart
@@ -15,17 +16,27 @@ class WebCart extends Controller
 {
 
     private $cart;
+    private $user;
 
     public function __construct($router)
     {
         parent::__construct($router);
         $this->cart = new Cart();
+
+        if (empty($_SESSION["user"]) || !$this->user = (new User())->findById($_SESSION["user"]["id"])) {
+            unset($_SESSION["user"]);
+
+            // message("error", "")
+            $this->router->redirect("web.login");
+        }
     }
 
     public function index(): void
     {
         echo $this->view->render("themes/cart", [
-            "products" => $this->cart->cart()["itens"]
+            "products" => $this->cart->cart()["itens"],
+            "total" => $this->cart->cart()["total"],
+            "amount" => $this->cart->cart()["amount"]
         ]);
     }
 

@@ -2,6 +2,9 @@
 
 <main>
     <section class="container">
+        <div class="login_form_callback" style="margin-top: 20px;">
+            <?= message(); ?>
+        </div>
         <?php if (!empty($products)) : ?>
             <div class="cart_info">
                 <table>
@@ -45,6 +48,25 @@
                     </tbody>
                 </table>
             </div>
+
+
+
+
+            <section id="do_action">
+
+                <div class="total_area">
+                    <ul>
+                        <li>Produtos <span class="amount"><?= $amount; ?></span></li>
+                        <li>Envio <span>Grátis</span></li>
+                        <li>Total <span class="total">R$ <?= $total; ?></span></li>
+                    </ul>
+                    <div style="margin: 14px;">
+                        <a class="check_out" href="<?= $router->route("checkout.index"); ?>">Continuar compra</a>
+                    </div>
+
+                </div>
+            </section>
+
         <?php else : ?>
             <div class="cart-empty">
                 <div class="message">
@@ -72,8 +94,19 @@
             });
 
 
-
             $.post(data.action, data, function(cart) {
+
+                if (cart.amount) {
+                    $(".amount").html(cart.amount);
+                } else {
+                    $(".amount").html("cart.amount");
+                }
+
+                if (cart.total) {
+                    $(".total").html(formater.format(cart.total));
+                } else {
+                    $(".total").html("0");
+                }
 
                 if (!jQuery.isEmptyObject(cart.itens)) {
 
@@ -94,7 +127,6 @@
 
             }, "json");
         });
-
 
     });
 </script>

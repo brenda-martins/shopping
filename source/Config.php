@@ -50,3 +50,9 @@ define("MAIL", [
 // if ($_SERVER["SERVER_NAME"] == "localhost") {
 //     require __DIR__ . "/Minify.php";
 // }
+
+
+/**
+ * API KEY PAGARME
+ */
+define("PAGARME_API_KEY", "digite aqui sua api da pagar,e");

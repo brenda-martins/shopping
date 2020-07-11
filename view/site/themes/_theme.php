@@ -47,6 +47,16 @@
 
                 <nav>
                     <ul>
+
+
+                        <?php if (isset($_SESSION["admin"])) : ?>
+                            <li>
+                                <a href="<?= $router->route("admin.index"); ?>">Área Administrativa</a>
+                            </li>
+
+                        <?php endif; ?>
+
+
                         <?php if (empty($_SESSION["user"])) : ?>
                             <li>
                                 <a href="<?= $router->route("web.login"); ?>">Entrar</a>
@@ -56,21 +66,20 @@
                                 <a href="<?= $router->route("web.register"); ?>">Cadastrar</a>
                             </li>
 
+
+                        <?php else : ?>
+
                             <li>
                                 <a href="<?= $router->route("cart.index"); ?>">Carrinho</a>
                             </li>
-
-                        <?php else : ?>
                             <li>
-                                <a href="<?= $router->route(""); ?>">Sair</a>
-                            </li>
-
-                            <?php if (isset($_SESSION["admin"])) ?>
-                            <li>
-                                <a href="<?= $router->route("admin.index"); ?>">Área Administrativa</a>
+                                <a href="<?= $router->route("web.logout"); ?>">Sair</a>
                             </li>
 
                         <?php endif; ?>
+
+
+
                     </ul>
                 </nav>
 

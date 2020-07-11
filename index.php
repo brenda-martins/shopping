@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+
 require __DIR__ . "/vendor/autoload.php";
 
 $router = new \CoffeeCode\Router\Router(site());
@@ -45,6 +47,18 @@ $router->get("/add/{id}", "WebCart:add", "cart.add");
 $router->post("/add", "WebCart:more", "cart.more");
 $router->post("/less", "WebCart:less", "cart.less");
 $router->post("/remove", "WebCart:remove", "cart.remove");
+
+
+/**
+ *  CHECKOUT
+ */
+$router->group("/checkout");
+$router->get("/", "Checkout:index", "checkout.index");
+$router->post('/', "Checkout:address", "checkout.address");
+$router->get("/card", "Checkout:card", "checkout.card");
+$router->post("/card", "Checkout:storeCard", "checkout.storeCard");
+$router->get("/confirmar", "Checkout:showFormConfirm", "checkout.showFormConfirm");
+$router->post("/confirm", "Checkout:confirm", "checkout.confirm");
 
 
 /*

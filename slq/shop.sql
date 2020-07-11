@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: 02-Jul-2020 às 09:53
+-- Generation Time: 11-Jul-2020 às 17:48
 -- Versão do servidor: 5.7.30-0ubuntu0.18.04.1
 -- PHP Version: 7.2.24-0ubuntu0.18.04.6
 
@@ -19,6 +19,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `adresses`
+--
+
+CREATE TABLE `adresses` (
+  `id` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `state` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `cep` int(11) NOT NULL,
+  `number` varchar(10) NOT NULL,
+  `street` varchar(100) NOT NULL,
+  `neighborhood` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -47,6 +66,23 @@ INSERT INTO `categories` (`name`, `id`, `created_at`, `updated_at`, `parent`, `i
 ('Brincos', 5, '2020-06-29 13:44:27', '2020-06-29 13:44:27', 4, 1),
 ('Colares', 6, '2020-06-29 13:44:32', '2020-06-29 13:44:32', 4, 1),
 ('Roupas', 7, '2020-07-02 11:41:34', '2020-07-02 11:41:34', NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `credit_cards`
+--
+
+CREATE TABLE `credit_cards` (
+  `id` int(11) NOT NULL,
+  `user` int(11) DEFAULT NULL,
+  `hash` varchar(255) DEFAULT NULL,
+  `last_digits` varchar(255) DEFAULT NULL,
+  `brand` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 -- --------------------------------------------------------
 
@@ -117,9 +153,21 @@ INSERT INTO `users` (`name`, `id`, `email`, `password`, `contact`, `forget`, `cr
 --
 
 --
+-- Indexes for table `adresses`
+--
+ALTER TABLE `adresses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `credit_cards`
+--
+ALTER TABLE `credit_cards`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -139,10 +187,20 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `adresses`
+--
+ALTER TABLE `adresses`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `credit_cards`
+--
+ALTER TABLE `credit_cards`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `products`
 --

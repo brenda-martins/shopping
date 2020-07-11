@@ -22,7 +22,7 @@ $ cd shopping
 2. Run the composer
 
 ,,,
-$ composer install / composer update
+$composer update
 ,,,
 
 3. Set your DB settings in Source/Config.php
@@ -56,6 +56,15 @@ define("MAIL", [
     "from_name" => "",
     "from_email" => ""
 ]);
+,,,
+
+
+
+5. I used the API of Paguar-me to complete the purchase, to configure the settings you need to register (free) on the site https://dashboard.pagar.me/#/login  and get the APY_KEY and configure the application in Source\Config.php
 
 ,,,
+define("PAGARME_API_KEY", "digite aqui sua api da pagarme");
+,,,
+
+You can use the website https://www.4devs.com.br/gerador_de_numero_cartao_credito to generate a credit card format valid for doing the tests
 
