@@ -80,7 +80,7 @@ define("MAIL", [
     "from_name" => "",
     "from_email" => ""
 ]);
-,,,
+```
 
 5. I used the API of Paguar-me to complete the purchase, to configure the settings you need to register (free) on the site https://dashboard.pagar.me/#/login  and get the APY_KEY and configure the application in Source\Config.php
 
