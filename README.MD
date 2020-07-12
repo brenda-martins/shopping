@@ -45,9 +45,9 @@ $ cd shopping
 
 2. Run the composer
 
-,,,
+```
 $composer update
-,,,
+```
 
 3. Set your DB settings in Source/Config.php
 
